@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <script>
+    let humanScore = 0;
+    let computerScore = 0;
+
     function getCompChoice() { // this function gets the computers rock paper or scissors
         return Math.floor(Math.random() * 3); // gets a number 0, 1, 2, 0 = rock, 1 = paper, 2 = scissors
     }
@@ -30,15 +33,15 @@
                 console.log("Tie");
             } else if (playerChoice == 0 && compChoice == 2) {
                 console.log("You Win");
+                humanScore += 1;
             } else if (playerChoice == compChoice + 1) {
                 console.log("You Win");
+                humanScore += 1;
             } else {
                 console.log("You Lose");
+                computerScore += 1;
             }
         }
-
-        console.log(compChoice, playerChoice)
-
     }
 </script>
 <body>
