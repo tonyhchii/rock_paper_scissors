@@ -54,6 +54,28 @@
             }
         }
     }
+
+    function displayScore() {
+        console.log("Player score " + humanScore);
+        console.log("Computer score " + computerScore);
+    }
+
+    function playRounds(numRounds) {
+        for (let i = 0; i < numRounds; i++) {
+            playRPS()
+            displayScore()
+        }
+        if (humanScore == computerScore) {
+            console.log("It's a tie!")
+        } else {
+            let winner = humanScore > computerScore ? "You are" : "The computer is"
+            console.log(winner + " the winner!");
+        }
+    }
+
+    let rounds = window.prompt("How many rounds of rock paper scissor would you like to play?")
+
+    playRounds(rounds);
 </script>
 <body>
     
