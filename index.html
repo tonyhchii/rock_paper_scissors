@@ -10,6 +10,16 @@
         return Math.floor(Math.random() * 3); // gets a number 0, 1, 2, 0 = rock, 1 = paper, 2 = scissors
     }
 
+    function getPlayerChoice(playerChoice) {
+        switch (playerChoice){
+            case "rock": return 0;
+            case "paper": return 1;
+            case "scissors": return 2;
+            default: return 0;
+        }
+        
+    }
+    
     function playRPS(yourSel) {
         let compChoice = getCompChoice()
         if (yourSel > 2 || yourSel < 0) {
