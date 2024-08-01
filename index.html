@@ -6,13 +6,29 @@
     <title>Document</title>
 </head>
 <script>
-    let compChoice
     function getCompChoice() { // this function gets the computers rock paper or scissors
-        compChoice = Math.floor(Math.random() * 3); // gets a number 0, 1, 2
+        return Math.floor(Math.random() * 3); // gets a number 0, 1, 2, 0 = rock, 1 = paper, 2 = scissors
     }
 
-    getCompChoice()
-    console.log(compChoice)
+    function playRPS(yourSel) {
+        let compChoice = getCompChoice()
+        if (yourSel > 2 || yourSel < 0) {
+            console.warn("Enter a number between 0-2");
+        } else {
+            if (yourSel == compChoice) {
+                console.log("Tie");
+            } else if (yourSel == 0 && compChoice == 2) {
+                console.log("You Win");
+            } else if (yourSel == compChoice + 1) {
+                console.log("You Win");
+            } else {
+                console.log("You Lose");
+            }
+        }
+
+        console.log(compChoice, yourSel)
+
+    }
 </script>
 <body>
     
