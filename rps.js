@@ -59,10 +59,10 @@ let humanScore = 0;
     function displayScore() {
         playerScore.innerText  = "Player score " + humanScore;
         compScore.innerText  = "Computer score " + computerScore;
-        if (humanScore == 5) {
+        if (humanScore >= 5) {
             winner.innerText  = "The Winner is the Player!"
         }
-        if (compScore == 5) {
+        if (computerScore >= 5) {
             winner.innerText = "The Winner is the Computer!"
         }
     }
