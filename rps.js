@@ -45,11 +45,12 @@ let humanScore = 0;
                 computerScore += 1;
             }
         }
+        displayScore()
     }
 
     function displayScore() {
-        console.log("Player score " + humanScore);
-        console.log("Computer score " + computerScore);
+        playerScore.innerHTML = "Player score " + humanScore;
+        compScore.innerHTML = "Computer score " + computerScore;
     }
 
     function playRounds(numRounds) {
@@ -68,6 +69,11 @@ let humanScore = 0;
     const buttons = document.querySelectorAll(".options");
     buttons.forEach((button) => {
         button.addEventListener("click", function(){
-            playRPS(button.innerText)
+            playRPS(button.innerText);
         });
     });
+
+    const results = document.querySelector("#results");
+    const playerScore = document.querySelector("#playerScore");
+    const compScore = document.querySelector("#compScore");
+
