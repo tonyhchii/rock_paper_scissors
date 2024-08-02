@@ -30,27 +30,41 @@ let humanScore = 0;
             console.warn("Enter a number between 0-2");
         } else {
             if (playerChoice == compChoice) {
-                console.log("Tie game");
+                results.innerText = "Tie game";
+                gamePlay.innerText = changeNumToSel(playerChoice) + " ties with " + changeNumToSel(compChoice);
             } else if (playerChoice == 0 && compChoice == 2) {
-                console.log("You Win");
-                console.log(changeNumToSel(playerChoice) + " beats " + changeNumToSel(compChoice))
+                results.innerText = "You Win";
+                gamePlay.innerText = changeNumToSel(playerChoice) + " beats " + changeNumToSel(compChoice);
                 humanScore += 1;
             } else if (playerChoice == compChoice + 1) {
-                console.log("You Win");
-                console.log(changeNumToSel(playerChoice) + " beats " + changeNumToSel(compChoice))
+                results.innerText = "You Win";
+                gamePlay.innerText = changeNumToSel(playerChoice) + " beats " + changeNumToSel(compChoice);
                 humanScore += 1;
             } else {
-                console.log("You Lose");
-                console.log(changeNumToSel(compChoice) + " beats " + changeNumToSel(playerChoice))
+                results.innerText = "You Lose";
+                gamePlay.innerText = changeNumToSel(playerChoice) + " loses to " + changeNumToSel(compChoice);
                 computerScore += 1;
             }
         }
         displayScore()
     }
 
+    function reset() {
+        humanScore = 0;
+        computerScore = 0;
+        playerScore.innerText = "";
+        compScore.innerText = "";
+    }
+
     function displayScore() {
-        playerScore.innerHTML = "Player score " + humanScore;
-        compScore.innerHTML = "Computer score " + computerScore;
+        playerScore.innerText  = "Player score " + humanScore;
+        compScore.innerText  = "Computer score " + computerScore;
+        if (humanScore == 5) {
+            winner.innerText  = "The Winner is the Player!"
+        }
+        if (compScore == 5) {
+            winner.innerText = "The Winner is the Computer!"
+        }
     }
 
     function playRounds(numRounds) {
@@ -76,4 +90,5 @@ let humanScore = 0;
     const results = document.querySelector("#results");
     const playerScore = document.querySelector("#playerScore");
     const compScore = document.querySelector("#compScore");
-
+    const winner = document.querySelector('#winner');
+    const gamePlay = document.querySelector('#gamePlay');
